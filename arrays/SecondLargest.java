@@ -1,4 +1,3 @@
-package arrays;
 
 final class SecondLargest {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package queues;
 
-public class QueueSimpleImplementation {
+public class SimpleQueueTest {
     public static void main(String[] args) {
         SimpleQueue queue = new SimpleQueue(3);
         queue.enque(1);

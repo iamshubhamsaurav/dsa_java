@@ -10,6 +10,27 @@ public class BasicsHashMap {
         map.put(2, "ABC");
         map.put(3, "DEF");
 
-        System.out.println(map);
+        // Removing item
+        map.remove(0);
+
+        // Check if key exists in map
+        if(map.containsKey(1)) {
+            System.out.println("Contains 1");
+            // get the value using key
+            System.out.println(map.get(1));
+        }
+
+        for(Map.Entry<Integer, String> entry: map.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
+
+        Set<Integer> keySet = map.keySet();
+        for(int k: keySet) {
+            System.out.println(map.get(k));
+        }
+
+
+
     }
 }

@@ -8,6 +8,7 @@ public class BinaryTree {
 
         inOrder(newNode);
         System.out.println("Height: " + height(newNode));
+        printKDistantNode(newNode, 1);
     }
 
     static void inOrder(Node root) {
@@ -40,6 +41,16 @@ public class BinaryTree {
         }
         return Math.max(height(root.left), height(root.right)) + 1;
     }
+
+    static void printKDistantNode(Node root, int k) {
+        if(root == null) return;
+        if(k==0) System.out.println(root.key + " ");
+        else {
+            printKDistantNode(root.left, k - 1);
+            printKDistantNode(root.right, k - 1);
+        } 
+    }
+
 }
 
 class Node {

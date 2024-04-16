@@ -19,6 +19,12 @@ public class BinaryTree {
         printKDistantNode(newNode, 1);
         System.out.println("Level Order Traversal Below");
         levelOrderTraversal(newNode);
+        System.out.println("Size of tree: "+ getSize(newNode));
+    }
+
+    static int getSize(Node root) {
+        if(root == null) return 0;
+        else return 1 + getSize(root.left) + getSize(root.right);
     }
 
     static void inOrder(Node root) {

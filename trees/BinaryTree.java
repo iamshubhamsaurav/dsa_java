@@ -19,7 +19,8 @@ public class BinaryTree {
         printKDistantNode(newNode, 1);
         System.out.println("Level Order Traversal Below");
         levelOrderTraversal(newNode);
-        System.out.println("Size of tree: "+ getSize(newNode));
+        System.out.println("Size of tree: " + getSize(newNode));
+        System.out.println("Max Node: " + getMax(newNode));
     }
 
     static int getSize(Node root) {
@@ -81,6 +82,12 @@ public class BinaryTree {
                 q.add(curr.right);
             }
         }
+    }
+
+    // This can also be done using the iterative method using the level order traversal
+    static int getMax(Node root) {
+        if(root == null) return Integer.MIN_VALUE;
+        return Math.max(root.key, Math.max(getMax(root.left), getMax(root.right)));
     }
 
 }

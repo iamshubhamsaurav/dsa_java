@@ -2,6 +2,7 @@ package trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BinaryTree {
     public static void main(String[] args) {
@@ -81,6 +82,21 @@ public class BinaryTree {
             if(curr.right != null) {
                 q.add(curr.right);
             }
+        }
+    }
+
+    void iterativeInOrderTraversal(Node root) {
+        Stack<Node> stack = new Stack<>();
+        Node curr = root;
+        while (curr != null || stack.isEmpty() == false) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+
+            curr = stack.pop();
+            System.out.println(curr.key + " ");
+            curr = curr.right;
         }
     }
 

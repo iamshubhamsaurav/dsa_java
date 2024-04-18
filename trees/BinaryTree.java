@@ -100,6 +100,18 @@ public class BinaryTree {
         }
     }
 
+    void iterativePreOrderTraversal(Node root) {
+        if(root == null) return;
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while(stack.isEmpty() != false) {
+            Node curr = stack.pop();
+            System.out.println(curr.key + " ");
+            if(root.right != null) stack.push(curr.right);
+            if(root.left != null) stack.push(curr.left);
+        }
+    }
+
     // This can also be done using the iterative method using the level order traversal
     static int getMax(Node root) {
         if(root == null) return Integer.MIN_VALUE;

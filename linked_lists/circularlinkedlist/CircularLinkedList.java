@@ -11,6 +11,7 @@ public class CircularLinkedList {
     }
 
     static void traverse(Node node) {
+        if(node == null) return;
         Node curr = node.next;
         System.out.println(node.data + " ");
 

@@ -22,6 +22,25 @@ public class CircularLinkedList {
         }
     }
 
+    static Node insertAtEnd(Node head, int value) {
+        Node newNode = new Node(value);
+        newNode.next = null;
+
+        if(head == null) {
+            head = newNode;
+            return head;
+        }
+
+        newNode.next = head.next;
+        head.next = newNode;
+
+        int temp = head.data;
+        head.data = newNode.data;
+        newNode.data = temp;
+
+        return head;
+    }
+
     static Node insertAtBeginning(Node head, int value) {
         Node newNode = new Node(value);
         newNode.next = null;

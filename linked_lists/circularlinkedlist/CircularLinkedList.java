@@ -95,6 +95,19 @@ public class CircularLinkedList {
         head.next = head.next.next;
         return head;
     }
+
+    static Node deleteFromPosition(Node head, int position) {
+        if(head == null) return head;
+        if(position == 1) deleteHead(head);
+        Node curr = head;
+        int i = 1;
+        while(i < (position - 1)) {
+            curr = curr.next;
+            i++;
+        }
+        curr = curr.next.next;
+        return head;
+    }
 }
 
 class Node {

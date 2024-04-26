@@ -2,24 +2,23 @@ package linked_lists.circularlinkedlist;
 
 public class CircularLinkedList {
     public static void main(String[] args) {
-        Node node = new Node(1);
-        node.next = new Node(2);
-        node.next.next = new Node(3);
-        node.next.next.next = node;
-        node = insertAtBeginning(node, 0);
+        Node node = new Node(3);
+        node = insertAtBeginning(node, 2);
+        node = insertAtBeginning(node, 1);
+        // insertAtEnd(node, 4);
+        
         traverse(node);
         
     }
 
-    static void traverse(Node node) {
-        if(node == null) return;
-        Node curr = node.next;
-        System.out.println(node.data + " ");
-
-        while (curr != node) {
+    static void traverse(Node head) {
+        if(head == null) return;
+        
+        Node curr = head;
+        do {
             System.out.println(curr.data);
-            curr = curr.next;       
-        }
+            curr = curr.next;
+        } while (curr != head);
     }
 
     static Node insertAtEnd(Node head, int value) {
@@ -48,6 +47,7 @@ public class CircularLinkedList {
         // handle error/ edge case
         if(head == null) {
             head = newNode;
+            head.next = newNode;
             return head;
         }
 

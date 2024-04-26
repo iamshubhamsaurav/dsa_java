@@ -83,6 +83,18 @@ public class CircularLinkedList {
         }
         return head;
     }
+
+    // Delete from the Head - Effecient Solution
+    static Node deleteHead(Node head) {
+        if(head == null) return null;
+        if(head.next == null) return null;
+        
+        // Change the data of head with the data of head.next
+        // Update the nead.next with head.next.next thereby removing the head completely in constant time
+        head.data = head.next.data;
+        head.next = head.next.next;
+        return head;
+    }
 }
 
 class Node {

@@ -87,8 +87,8 @@ public class BinaryTree2 {
     public static int sumOfNodes(Node root) {
         if(root == null) return 0;
 
-        int leftSum = count(root.left);
-        int rightSum = count(root.right);
+        int leftSum = sumOfNodes(root.left);
+        int rightSum = sumOfNodes(root.right);
 
         int sum = leftSum + rightSum + root.data;
         return sum;

@@ -74,14 +74,24 @@ public class BinaryTree2 {
 
     // Count the number of nodes - count the left and right seperately then add 1 to their sum
     // leftNodesCount + rightNodesCount + 1 -- 1 for the root node
-    public int count(Node root) {
+    public static int count(Node root) {
         if(root == null) return 0;
 
         int leftNodes = count(root.left);
         int rightNodes = count(root.right);
-        
+
         int total = leftNodes + rightNodes + 1;
         return total;
+    }
+
+    public static int sumOfNodes(Node root) {
+        if(root == null) return 0;
+
+        int leftSum = count(root.left);
+        int rightSum = count(root.right);
+
+        int sum = leftSum + rightSum + root.data;
+        return sum;
     }
 
     public static void main(String[] args) {
@@ -96,5 +106,7 @@ public class BinaryTree2 {
         postorder(root);
         System.out.println("Level Order Traversal Below");
         levelorder(root);
+        System.out.println("Count: " + count(root));
+        System.out.println("Sum of Nodes: " + sumOfNodes(root));
     }
 }

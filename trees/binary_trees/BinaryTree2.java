@@ -72,6 +72,18 @@ public class BinaryTree2 {
         }
     }
 
+    // Count the number of nodes - count the left and right seperately then add 1 to their sum
+    // leftNodesCount + rightNodesCount + 1 -- 1 for the root node
+    public int count(Node root) {
+        if(root == null) return 0;
+
+        int leftNodes = count(root.left);
+        int rightNodes = count(root.right);
+        
+        int total = leftNodes + rightNodes + 1;
+        return total;
+    }
+
     public static void main(String[] args) {
 
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};

@@ -103,6 +103,15 @@ public class BinaryTree2 {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
+    public static int maxNode(Node root) {
+        if(root == null) return Integer.MIN_VALUE;
+        
+        int leftMax = maxNode(root.left);
+        int rightMax = maxNode(root.right);
+
+        return Math.max(root.data, Math.max(leftMax, rightMax));
+    }
+
     public static void main(String[] args) {
 
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
@@ -120,5 +129,8 @@ public class BinaryTree2 {
 
         // Height of tree
         System.out.println("Height of tree: " + height(root));
+
+        // Maximum node of tree
+        System.out.println("MaxNode of trees: " + maxNode(root));
     }
 }

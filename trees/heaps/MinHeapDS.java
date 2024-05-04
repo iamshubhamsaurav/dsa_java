@@ -75,4 +75,23 @@ public class MinHeapDS {
         return Integer.MAX_VALUE; // error because i is index out of bounds
     }
 
+    int extractMin() {
+        if(size == 0) return Integer.MAX_VALUE;
+        if(size == 1) {
+            size--;
+            return arr[0];
+        }
+        // Swap the root with the last element
+        // After swapping, cal the minHeapify to fix the heap
+
+        // swap
+        int temp = arr[0];
+        arr[0] = arr[size - 1];
+        arr[size - 1] = temp;
+
+        size--;
+        minHeapify(0);
+        return arr[size]; // returning size because size was decremented and the min is now at size index
+    }
+
 }

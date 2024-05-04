@@ -94,4 +94,22 @@ public class MinHeapDS {
         return arr[size]; // returning size because size was decremented and the min is now at size index
     }
 
+    void decreaseKey_(int index, int value) {
+        arr[index] = value;
+        minHeapify(index);
+    }
+
+    void decreaseKey(int index, int value) {
+        arr[index] = value;
+        while (index != 0 && arr[parent(index)] > arr[index]) {
+            // Swap the value of parent and the index
+            int temp = arr[index];
+            arr[index] = arr[parent(index)];
+            arr[parent(index)] = temp;
+
+            // Update the index to the index of parent
+        }
+    }
+
+
 }

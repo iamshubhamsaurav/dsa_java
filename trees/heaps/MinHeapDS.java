@@ -40,4 +40,32 @@ public class MinHeapDS {
         }
     }
 
+    // minHeapify assumes that only one node is out of line/sync and that node is the root node.
+    // The rest are assumed to satisfy the heap rules.
+    // So if root is the smallest among it's children then no need to process further
+    void minHeapify(int i) {
+        int leftChild = left(i);
+        int rightChild = right(i);
+
+        int smallest = i;
+
+        if(leftChild < size && arr[leftChild] < arr[i]) {
+            smallest = leftChild;
+        }
+
+        if(rightChild < size && rightChild < arr[i]) {
+            smallest = rightChild;
+        }
+
+        if(smallest != i) {
+            // Swap the parent Value with the smallest Value
+            int temp = arr[i];
+            arr[i] = arr[smallest];
+            arr[smallest] = temp;
+
+            // Call the minHeapify to check the sub-tree
+            minHeapify(smallest);
+        }
+    } // minHeapify
+
 }

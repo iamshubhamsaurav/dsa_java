@@ -68,4 +68,11 @@ public class MinHeapDS {
         }
     } // minHeapify
 
+    // Simply returns the min element from the array which is always the root
+    // Constant time operation
+    int getMin(int i) {
+        if(i < size) return arr[i];
+        return Integer.MAX_VALUE; // error because i is index out of bounds
+    }
+
 }

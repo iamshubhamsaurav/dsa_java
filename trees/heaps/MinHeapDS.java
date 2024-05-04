@@ -122,5 +122,25 @@ public class MinHeapDS {
         extractMin();
     }
 
+    // This takes an array and builds a heap using it
+    // The heap satisfies the rules of MinHeap
+
+    // The basic idea is that we go to the last internal node(ie. the last node which is a parent)
+    // Then we call the minHeapify function on it. This builds a sub MinHeap.
+    // Now the last parent is a sub tree which is a MinHeap
+
+    // Then we continue this process on all the parents before that.
+    // We start from the right most parent(last parent) and then move to left.
+    // Every level, we start from right then move to left.
+    // At the end, we build a heap in log(n) time
+
+    // (size - 2) / 2 gives us the last parent
+    // size - 1 is the last index. size - 2 
+    void buildHeap() {
+        for(int i = (size - 2) / 2; i >= 0; i--) {
+            minHeapify(i);
+        }
+    }
+
 
 }

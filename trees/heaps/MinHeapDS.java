@@ -112,5 +112,15 @@ public class MinHeapDS {
         }
     }
 
+    // Deleting a key from the Min Heap
+    // First call the decreaseKey function and update the node value to Min value
+    // The decrease key internally shift the MIN_VALUE to the root node
+    // After this, we simple call the extractMin method and take out the MIN_VALUE from the heap.
+    // This way, we delete the node from the heap
+    void delete(int index) {
+        decreaseKey(index, Integer.MIN_VALUE);
+        extractMin();
+    }
+
 
 }

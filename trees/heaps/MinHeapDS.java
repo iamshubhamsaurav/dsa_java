@@ -108,6 +108,7 @@ public class MinHeapDS {
             arr[parent(index)] = temp;
 
             // Update the index to the index of parent
+            index = parent(index);
         }
     }
 

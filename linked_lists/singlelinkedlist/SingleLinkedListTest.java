@@ -137,13 +137,13 @@ public class SingleLinkedListTest {
     static void middleOfLinkedList(Node head) {
         if(head == null) return;
         if(head.next == null) System.out.println(head.data);
-        Node middle = head;
-        Node curr = head;
-        while(curr.next.next != null) {
-            curr = curr.next.next;
-            middle = middle.next;
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
         }
-        System.out.println(middle.data);
+        System.out.println(slow.data);
     }
 
 }

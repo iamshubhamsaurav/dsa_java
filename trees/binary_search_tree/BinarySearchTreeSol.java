@@ -22,6 +22,18 @@ public class BinarySearchTreeSol {
         }
     }
 
+    static boolean searchRecursive(Node root, int key) {
+        if (root == null) {
+            return false;
+        } else if (root.data == key) {
+            return true;
+        } else if (root.data < key) {
+            return searchRecursive(root.right, key);
+        } else {
+            return searchRecursive(root.left, key);
+        }
+    }
+
     public static void main(String[] args) {
         Node root = new Node(8);
         // Node root = new Node(1);

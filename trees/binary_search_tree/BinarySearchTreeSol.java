@@ -34,6 +34,17 @@ public class BinarySearchTreeSol {
         }
     }
 
+    static Node insertRecursive(Node root, int data) {
+        if(root == null) {
+            return new Node(data);
+        } else if (root.data > data) {
+            root.left = insertRecursive(root.left, data);
+        } else if (root.data < data) {
+            root.right = insertRecursive(root.right, data);
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
         Node root = new Node(8);
         // Node root = new Node(1);

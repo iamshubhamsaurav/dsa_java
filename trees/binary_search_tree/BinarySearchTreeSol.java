@@ -36,7 +36,8 @@ public class BinarySearchTreeSol {
 
     static Node insertRecursive(Node root, int data) {
         if(root == null) {
-            return new Node(data);
+            root = new Node(data);
+            return root;
         } else if (root.data > data) {
             root.left = insertRecursive(root.left, data);
         } else if (root.data < data) {

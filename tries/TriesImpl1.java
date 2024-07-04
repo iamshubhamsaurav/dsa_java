@@ -65,6 +65,7 @@ public class TriesImpl1 {
             if(curr.children[idx] == null) {
                 return false;
             }
+            curr = curr.children[idx];
         }
 
         return true;

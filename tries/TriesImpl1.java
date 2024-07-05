@@ -71,6 +71,10 @@ public class TriesImpl1 {
         return true;
     }
 
+    public static int countUniqueSubString(String string) {
+        return 1;
+    }
+
     public static void main(String[] args) {
         String words[] = {"aa", "the", "their", "there", "any"};
         for (int i = 0; i < words.length; i++) {

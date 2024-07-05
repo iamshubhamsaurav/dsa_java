@@ -71,20 +71,42 @@ public class TriesImpl1 {
         return true;
     }
 
+
+    // Find all suffix of the string
+    // create trie using the suffix list
+    // return the total number of nodes in trie
+    // total no. of node = all suffix
     public static int countUniqueSubString(String string) {
-        return 1;
+        for (int i = 0; i < string.length(); i++) {
+            String prefix = string.substring(i);
+            insert(prefix);
+        }
+        int count = countNodes(root);
+        return count;
+    }
+
+    public static int countNodes(Node root) {
+        int count = 0;
+        for (int i = 0; i < 26; i++) {
+            if(root.children[i] != null) {
+                count += countNodes(root.children[i]);
+            }
+        }
+
+        return count + 1;
     }
 
     public static void main(String[] args) {
-        String words[] = {"aa", "the", "their", "there", "any"};
-        for (int i = 0; i < words.length; i++) {
-            insert(words[i]);
-        }
+        // String words[] = {"aa", "the", "their", "there", "any"};
+        // for (int i = 0; i < words.length; i++) {
+        //     insert(words[i]);
+        // }
         // for (int i = 0; i < 26; i++) {
         //     System.out.println(root.children[i]);
         // }
         // System.out.println(root.children[0]);
-        System.out.println(search("any"));
-        System.out.println(search("anything"));
+        // System.out.println(search("any"));
+        // System.out.println(search("anything"));
+        System.out.println(countUniqueSubString("ab"));
     }
 }

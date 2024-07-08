@@ -44,7 +44,7 @@ public class TriesImpl1 {
                 return false;
             }
             // Node node = curr.children[idx]; // node at the index idx
-            if(i == word.length() && node.eow == false) {
+            if(i == word.length() - 1 && node.eow == false) {
                 return false;
             }
 

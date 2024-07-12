@@ -1,4 +1,4 @@
-package leetcode_ques.twoPointers;
+package leetcode_ques.array_and_hashing;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -5,9 +5,9 @@ public class ProductExceptSelf {
         int nums[] = {1,2,3,4};
         int res[] = productExceptSelf(nums);
 
-        // for(int n: res) {
-        //     System.out.println(n);
-        // }
+        for(int n: res) {
+            System.out.println(n);
+        }
     }
 
     public static int[] productExceptSelf(int[] nums) {

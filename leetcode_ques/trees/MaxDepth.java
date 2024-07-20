@@ -1,6 +1,7 @@
 package leetcode_ques.trees;
 
 public class MaxDepth {
+    
      // max depth is just the height of binary tree
      public int maxDepth(TreeNode root) {
         if(root == null) return 0;

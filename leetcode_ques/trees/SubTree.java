@@ -1,3 +1,5 @@
+package leetcode_ques.trees;
+
 public class SubTree {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if(subRoot == null) return true;

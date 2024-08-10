@@ -1,11 +1,27 @@
 package leetcode_ques.bit_manipulations;
 
+import java.util.HashSet;
+
 public class MissingNumber {
 
     // using hashset
+    public int missingNumberUsingHashSet(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int n: nums) {
+            set.add(n);
+        }
+
+        for(int i = 0; i <= nums.length; i++) {
+            if(!set.contains(i)) {
+                return i;
+            }
+        }
+
+        return 0;
+    }
 
     // using xor
-    public int missingNumber(int[] nums) {
+    public int missingNumberUsingXOR(int[] nums) {
         int n = nums.length;
         int xorArr = 0;
         int xorRange = 0;
